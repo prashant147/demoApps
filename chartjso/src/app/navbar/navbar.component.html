@@ -1,0 +1,105 @@
+
+<style>
+  .navbar-new-top{
+  background: #444d58;
+  height:62px;
+}
+.navbar-brand{
+  font-weight: 600;
+}
+
+.navbarff a{
+  font-weight: normal;
+color:#fff !important;
+}
+.navbar-brand img{
+  width: 65%;
+  margin-top:-6px;
+}
+.navbar-new-top ul{
+  margin-right: 9%;
+}
+.navbar-new-top ul li{
+  margin-right: 8%;
+}
+.navbar-new-bottom{
+  background-color: #fff;
+  box-shadow: 0 5px 6px -2px rgba(0,0,0,.3);
+  border-top: 1px solid #e0e0e0;
+  margin-top: 4%;
+
+}
+.navbar-new-bottom ul li{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.navbar-nav .nav-item a {
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 1s ease;
+text-transform:uppercase;
+font-weight:normal;
+}
+.navbar-nav .nav-item a:hover{
+  color: #0062cc;
+}
+.dropdown-menu.show{
+  background: #f8f9fa;
+  border-radius: 0;
+}
+.header-btn{
+  width: 161%;
+  border: none;
+  border-radius: 1rem;
+  padding: 8%;
+  background: #0062cc;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+.active{
+border-bottom: 4px solid #000;
+}
+
+
+.fixed-top{
+  z-index: 111 !important;
+}
+
+.hat{
+  height:4px;
+  background:linear-gradient(90deg,#0fbdbd 0,#8ac43c);
+  margin-top: 62px;
+}
+</style>
+ <div class="row">
+  <div class="col-12" style="text-align: center;font-size: 20px;font-weight: 600;padding: 20px;">ChartJs</div>
+  <div class="col-12" style="font-size: 15px;font-weight: 100;padding: 20px;">
+    <span class="col-6">Loading Time:3.6s</span>
+    <span class="col-6" style="float: right;">Load Data:1000 </span>
+   </div>
+</div>
+<div   class="row">
+ 
+   <div class="col-6">
+
+    <app-my-bar-chart></app-my-bar-chart>
+   </div>
+   <div class="col-6">
+    <app-my-pie-chart></app-my-pie-chart>
+   
+   </div>
+</div>
+
+<p style="padding-left: 50px;margin-top:100px;">The bargraph & piechart with 10 Records</p>
+<div  class="row">
+  <div class="col-6">
+   <app-my-radar-chart></app-my-radar-chart>
+  </div>
+  <div class="col-md-6">
+
+    <app-my-doughnut-chart></app-my-doughnut-chart>
+  </div>
+</div>

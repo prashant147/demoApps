@@ -1,0 +1,8 @@
+<div style="display: block">
+    <span *ngIf="isRootApp" (click)="getBackRoot()">Back</span>
+    <canvas  baseChart (chartClick)="getChartEvent($event)"
+            [data]="pieChartData"
+            [options]="pieChartOptions"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"></canvas>
+  </div>
