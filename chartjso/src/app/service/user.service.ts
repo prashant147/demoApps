@@ -10271,6 +10271,7 @@ export class UserService {
     ]
         return this.groupBy(data,"country")
   }
+ 
   groupBy(objectArray, property) {
     return objectArray.reduce((acc, obj) => {
        const key = obj[property];

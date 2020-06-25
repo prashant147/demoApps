@@ -1,0 +1,17 @@
+<div  style="display: block"> 
+    <h2 class="text-center">{{headerTitle}} <span *ngIf="selectItems">: {{selectItems}}</span></h2>
+    <canvas  baseChart *ngIf="barChartData"
+            (chartClick)="chartClick($event)"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="chartType">
+    </canvas>
+    <canvas  baseChart *ngIf="chatData"
+        (chartClick)="chartClick($event)"
+        [data]="chatData"
+        [labels]="barChartLabels"
+        [chartType]="chartType">
+    </canvas>
+</div>

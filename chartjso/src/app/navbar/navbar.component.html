@@ -77,24 +77,22 @@ border-bottom: 4px solid #000;
  <div class="row">
   <div class="col-12" style="text-align: center;font-size: 20px;font-weight: 600;padding: 20px;">ChartJs</div>
   <div class="col-12" style="font-size: 15px;font-weight: 100;padding: 20px;">
-    <span class="col-6">Loading Time:3.6s</span>
-    <span class="col-6" style="float: right;">Load Data:1000 </span>
+    <span class="col-12" >Loading Time: <b style="font-size: 20px;font-weight: 500;">3.6s</b></span>
+    <span class="col-12" >Load Data:<b style="font-size: 20px;font-weight: 500;">10000</b> </span>
    </div>
 </div>
 <div   class="row">
  
-   <div class="col-12">
-    <app-my-bar-chart></app-my-bar-chart>
+   <div class="col-6">
+      <app-bar-chart [headerTitle]="'Bar Info'" [chartType]="'bar'" [barChartLabels]="barChartLabels" [barChartData]="barChartData" (selectItems)="selectBarItems($event)"></app-bar-chart>
    </div>
-   <div class="col-12">
-      <app-my-radar-chart></app-my-radar-chart>
+   <div class="col-6">
+      <app-bar-chart [headerTitle]="'Line Info'" [chartType]="'line'" [barChartLabels]="barChartLabels" [barChartData]="lineChartData" (selectItems)="selectLineItems($event)"></app-bar-chart>
    </div>
 </div>
-
-<p style="padding-left: 50px;margin-top:100px;">The bargraph & piechart with 10 Records</p>
 <div  class="row">
-  <div class="col-6">
-      <app-my-pie-chart></app-my-pie-chart>
-  
+  <div class="col-12">
+
+      <app-bar-chart [headerTitle]="'Pie Info'" [chartType]="'pie'" [barChartLabels]="pieChartLabels"  [chatData]="pieChartData" (selectItems)="selectPeiItems($event)"></app-bar-chart>
   </div>
 </div>
