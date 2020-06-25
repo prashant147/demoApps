@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-my-pie-chart',
@@ -8,7 +9,12 @@ import { ChartType, ChartOptions } from 'chart.js';
 })
 export class MyPieChartComponent implements OnInit {
 
- 
+  public Chartdata = [];
+  public pieChartLabels = [];
+  public pieChartData = [  ];
+  public pieChartType = 'pie';
+  public isRootApp:boolean = false;
+  
   public pieChartOptions: ChartOptions = {
     rotation:10,
     responsive: true,
@@ -20,17 +26,23 @@ export class MyPieChartComponent implements OnInit {
     }
   };
 
-  constructor() { }
+  constructor(public _service:UserService) { }
 
   ngOnInit() {
+    this.Chartdata = this._service.getData();
+
+    for (var key in this.Chartdata) { 
+      this.pieChartLabels.push(key);
+      for (var key1 in this.Chartdata[key]) {
+        console.log(this.Chartdata[key][key1].gdp2);
+           this.pieChartData.push(this.Chartdata[key][key1].gdp2);
+      }
+    }
   }
-  public pieChartLabels = ['Samsung', 'Apple', 'Huawei', 'OPPO', 'Vivo', 'Others'];
-  public pieChartData = [ 215, 160, 112, 100 , 638,321 ];
-  public pieChartType = 'pie';
-  public isRootApp:boolean = false;
   ngAfterViewInit() {
     
   }
+  /*
   getChartEvent(e){
     console.log(e);
     var obj = this;
@@ -57,48 +69,7 @@ export class MyPieChartComponent implements OnInit {
       obj.pieChartLabels.push(d[i].brand);
       obj.pieChartData.push(d[i].sales);
     }
-  }
-  getPieData() {
-    return [
-        { brand: 'Samsung', sales: 321
-            ,Chile:[
-                { brand: 'A1', sales: 321},
-                { brand: 'A2', sales: 100},
-                { brand: 'A3', sales: 500},
-                { brand: 'A4', sales: 300}
-            ] },
-        { brand: 'Apple', sales: 215,Chile:[
-            { brand: 'A5', sales: 321},
-            { brand: 'A6', sales: 100},
-            { brand: 'A7', sales: 500},
-            { brand: 'A8', sales: 300}
-        ] },
-        { brand: 'Huawei', sales: 160,Chile:[
-            { brand: 'A9', sales: 321},
-            { brand: 'A10', sales: 100},
-            { brand: 'A11', sales: 500},
-            { brand: 'A12', sales: 300}
-        ] },
-        { brand: 'OPPO', sales: 112,Chile:[
-            { brand: 'A11', sales: 321},
-            { brand: 'A12', sales: 100},
-            { brand: 'A13', sales: 500},
-            { brand: 'A14', sales: 300}
-        ] },
-        { brand: 'Vivo', sales: 100,Chile:[
-            { brand: 'A21', sales: 321},
-            { brand: 'A22', sales: 100},
-            { brand: 'A23', sales: 500},
-            { brand: 'A24', sales: 300}
-        ] },
-        { brand: 'Others', sales: 638,Chile:[
-            { brand: 'A31', sales: 321},
-            { brand: 'A32', sales: 100},
-            { brand: 'A33', sales: 500},
-            { brand: 'A34', sales: 300}
-        ] }
-    ];
-  }
+  }*/
 }
 
 

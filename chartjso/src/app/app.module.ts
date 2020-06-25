@@ -10,6 +10,7 @@ import { MyDoughnutChartComponent } from './my-doughnut-chart/my-doughnut-chart.
 import { MyRadarChartComponent } from './my-radar-chart/my-radar-chart.component';
 import { MyPieChartComponent } from './my-pie-chart/my-pie-chart.component';
 import { MyBarChartlessdataComponent } from './my-bar-chartlessdata/my-bar-chartlessdata.component';
+import { UserService } from './service/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,7 @@ import { MyBarChartlessdataComponent } from './my-bar-chartlessdata/my-bar-chart
     ChartsModule
     
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
