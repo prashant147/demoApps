@@ -10277,9 +10277,14 @@ export class UserService {
        const key = obj[property];
        if (!acc[key]) {
           acc[key] = [];
+          acc[key].push(
+            { 
+              "country": obj.country ,"continent": obj.continent,
+               "year": obj.year,"gdp1": obj.gdp1 ,"gdp2": obj.gdp2,"gdp": obj.gdp ,"group":[]
+            });
+       }else{
+         acc[key][0]['group'].push(obj);
        }
-       // Add object to list for given key's value
-       acc[key].push(obj);
        return acc;
     }, {});
   }

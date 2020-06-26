@@ -16,31 +16,29 @@ export class NavbarComponent implements OnInit {
     {data: [], label: 'GDP 2'}];
   public lineChartData = [ {data: [], label: 'GDP'}];
 
-  //public pieChartLabels  = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
-  public pieChartData: number[] = [];  
-  public pieChartLabels: any =[]
- 
-
+  //public pieChartData: number[] = [];  
+  //public pieChartLabels: any =[]
+  public pieChartData:any = [];
   constructor(public _service:UserService) { }
 
   ngOnInit() {
     this.Chartdata = this._service.getData();
-    this.pieChartLabels = [];
-    this.pieChartData = [];
+    this.pieChartData =  [];
     for (var key in this.Chartdata) { 
       this.barChartLabels.push(key); 
-      if(this.pieChartLabels.length < 10){
+      /*if(this.pieChartLabels.length < 10){
         this.pieChartLabels.push([key]); 
-      }
+      }*/
       
       for (var key1 in this.Chartdata[key]) {
-        this.barChartData[2].data.push(this.Chartdata[key][key1].gdp );
-        this.barChartData[1].data.push(this.Chartdata[key][key1].gdp1);
-        this.barChartData[0].data.push(this.Chartdata[key][key1].gdp2);
-        this.lineChartData[0].data.push(this.Chartdata[key][key1].gdp2);
         if(this.pieChartData.length < 10){
-         this.pieChartData.push(this.Chartdata[key][key1].year);
-        }
+          this.pieChartData.push(this.Chartdata[key][key1]);
+         }
+        this.barChartData[0].data.push(this.Chartdata[key][key1].gdp );
+        this.barChartData[2].data.push(this.Chartdata[key][key1].gdp1);
+        this.barChartData[1].data.push(this.Chartdata[key][key1].gdp2);
+        this.lineChartData[0].data.push(this.Chartdata[key][key1].gdp2);
+        
       }
     }
   }

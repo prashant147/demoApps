@@ -84,15 +84,14 @@ border-bottom: 4px solid #000;
 <div   class="row">
  
    <div class="col-6">
-      <app-bar-chart [headerTitle]="'Bar Info'" [chartType]="'bar'" [barChartLabels]="barChartLabels" [barChartData]="barChartData" (selectItems)="selectBarItems($event)"></app-bar-chart>
+      <app-bar-chart [headerTitle]="'Bar Info'" [chartType]="'bar'" [barChartLabels]="barChartLabels" [barChartData]="barChartData" ></app-bar-chart>
    </div>
    <div class="col-6">
-      <app-bar-chart [headerTitle]="'Line Info'" [chartType]="'line'" [barChartLabels]="barChartLabels" [barChartData]="lineChartData" (selectItems)="selectLineItems($event)"></app-bar-chart>
+      <app-bar-chart [headerTitle]="'Line Info'" [chartType]="'line'" [barChartLabels]="barChartLabels" [barChartData]="lineChartData" ></app-bar-chart>
    </div>
 </div>
 <div  class="row">
   <div class="col-12">
-
-      <app-bar-chart [headerTitle]="'Pie Info'" [chartType]="'pie'" [barChartLabels]="pieChartLabels"  [chatData]="pieChartData" (selectItems)="selectPeiItems($event)"></app-bar-chart>
+      <app-bar-chart [headerTitle]="'Pie Info'" [chartType]="'pie'" [chatData]="pieChartData" [drillDown]=true (selectItems)="selectPeiItems($event)"></app-bar-chart>
   </div>
 </div>

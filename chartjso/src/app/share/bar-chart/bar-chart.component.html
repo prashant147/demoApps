@@ -1,5 +1,6 @@
 <div  style="display: block"> 
     <h2 class="text-center">{{headerTitle}} <span *ngIf="selectItems">: {{selectItems}}</span></h2>
+    <span *ngIf="isRoot.length &gt; 0" (click)='getBackEvn()'>Back</span>
     <canvas  baseChart *ngIf="barChartData"
             (chartClick)="chartClick($event)"
             [datasets]="barChartData"
@@ -8,9 +9,9 @@
             [legend]="barChartLegend"
             [chartType]="chartType">
     </canvas>
-    <canvas  baseChart *ngIf="chatData"
+    <canvas  baseChart *ngIf="dataList.length  	&gt; 0"
         (chartClick)="chartClick($event)"
-        [data]="chatData"
+        [data]="dataList"
         [labels]="barChartLabels"
         [chartType]="chartType">
     </canvas>
